@@ -21,9 +21,9 @@ import React, { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
-import Create from './create.component';
-import Edit from './edit.component';
-import Index from './index.component';
+import Create from './components/create.component';
+import Edit from './components/edit.component';
+import Index from './components/index.component';
 
 class App extends Component {
   render() {
@@ -32,7 +32,7 @@ class App extends Component {
         <div className='container'>
           <nav className='navbar navbar-expand-lg navbar-light bg-light'>
             <Link to={'/'} className='navbar-brand'>
-              React CRUD Example
+              Lease Your Office Space
             </Link>
             <div
               className='collapse navbar-collapse'
@@ -58,7 +58,7 @@ class App extends Component {
             </div>
           </nav>{' '}
           <br />
-          <h2>Welcome to React CRUD Tutorial</h2> <br />
+          <h2>Welcome to Office Space As A Service</h2> <br />
           <Switch>
             <Route exact path='/create' component={Create} />
             <Route path='/edit/:id' component={Edit} />
@@ -69,5 +69,7 @@ class App extends Component {
     );
   }
 }
+
+
 
 export default App;
