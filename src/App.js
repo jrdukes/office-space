@@ -46,12 +46,12 @@ class App extends Component {
                 </li>
                 <li className='nav-item'>
                   <Link to={'/create'} className='nav-link'>
-                    Create
+                    Create Listing
                   </Link>
                 </li>
                 <li className='nav-item'>
                   <Link to={'/index'} className='nav-link'>
-                    Index
+                    Current Listings
                   </Link>
                 </li>
               </ul>
