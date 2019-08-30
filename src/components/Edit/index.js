@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
 
-export default class Create extends Component {
-  // constructor(props) {
+export default class Edit extends Component {
+  //   constructor(props) {
   // super(props);
   // this.onChangeBusinessName = this.onChangeBusinessName.bind(this);
   // this.onChangePropertyAddress = this.onChangePropertyAddress.bind(this);
@@ -17,7 +16,24 @@ export default class Create extends Component {
     business_email: '',
     business_phone: ''
   };
-  // }
+  //   }
+
+  componentDidMount() {
+    axios
+      .get('http://localhost:4000/business/edit/' + this.props.match.params.id)
+      .then(response => {
+        this.setState({
+          business_name: response.data.business_name,
+          property_address: response.data.property_address,
+          business_email: response.data.business_email,
+          usiness_phone: response.data.business_phone
+        });
+      })
+      .catch(function(error) {
+        console.log(error);
+      });
+  }
+
   onChangeBusinessName = e => {
     this.setState({
       business_name: e.target.value
@@ -48,24 +64,21 @@ export default class Create extends Component {
       business_phone: this.state.business_phone
     };
     axios
-      .post('http://localhost:4000/business/add', obj)
+      .post(
+        'http://localhost:4000/business/update/' + this.props.match.params.id,
+        obj
+      )
       .then(res => console.log(res.data));
 
-    this.setState({
-      business_name: '',
-      property_address: '',
-      business_email: '',
-      business_phone: ''
-    });
-
     this.props.history.push('/');
+    // this.props.history.push('/');
     window.location.reload();
   };
 
   render() {
     return (
       <div style={{ marginTop: 10 }}>
-        <h3 align='center'>Add Office Space To Lease</h3>
+        <h3 align='center'>Update Business</h3>
         <form onSubmit={this.onSubmit}>
           <div className='form-group'>
             <label>Business Name: </label>
@@ -104,13 +117,11 @@ export default class Create extends Component {
             />
           </div>
           <div className='form-group'>
-            {/* <Link to='/'> */}
             <input
               type='submit'
-              value='Register Business'
+              value='Update Business'
               className='btn btn-primary'
             />
-            {/* </Link> */}
           </div>
         </form>
       </div>
