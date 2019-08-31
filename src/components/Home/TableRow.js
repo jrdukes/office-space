@@ -13,6 +13,10 @@ class TableRow extends Component {
       // .delete('http://localhost:4000/business/delete/', this.state)
       .then(console.log('Deleted'))
       .catch(err => console.log(err));
+
+    // this.props.history.push('/');
+    // window.location.reload();
+    console.log(this.props.history);
   }
 
   render() {

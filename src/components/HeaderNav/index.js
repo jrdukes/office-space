@@ -20,11 +20,6 @@ export default class HeaderNav extends Component {
                 Add Listing
               </Link>
             </li>
-            {/* <li className='nav-item'>
-              <Link to={'/index'} className='nav-link'>
-                Current Listings
-              </Link>
-            </li> */}
           </ul>
         </div>
       </nav>

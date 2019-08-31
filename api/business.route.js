@@ -1,7 +1,7 @@
 const express = require('express');
 const businessRoutes = express.Router();
 
-// Require Business model in our routes module
+// Require Business model in routes module
 let Business = require('./business.model');
 
 // Defined store route
