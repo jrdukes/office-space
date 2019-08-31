@@ -26,7 +26,7 @@ export default class Edit extends Component {
           business_name: response.data.business_name,
           property_address: response.data.property_address,
           business_email: response.data.business_email,
-          usiness_phone: response.data.business_phone
+          business_phone: response.data.business_phone
         });
       })
       .catch(function(error) {
@@ -109,7 +109,7 @@ export default class Edit extends Component {
           <div className='form-group'>
             <label>Business Phone: </label>
             <input
-              type='text'
+              type='number'
               className='form-control'
               value={this.state.business_phone}
               onChange={this.onChangeBusinessPhone}

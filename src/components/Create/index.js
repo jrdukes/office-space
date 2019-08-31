@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import InputMask from 'react-input-mask';
+import 'react-phone-number-input/style.css';
+import PhoneInput from 'react-phone-number-input';
 
 export default class Create extends Component {
   // constructor(props) {
@@ -61,6 +64,12 @@ export default class Create extends Component {
     window.location.reload();
   };
 
+  // class PhoneInput extends Component {
+  //   render() {
+  //     return <InputMask {...this.props} mask="+4\9 99 999 99" maskChar=" " />;
+  //   }
+  // }
+
   render() {
     return (
       <div style={{ marginTop: 10 }}>
@@ -95,11 +104,16 @@ export default class Create extends Component {
           </div>
           <div className='form-group'>
             <label>Business Phone: </label>
-            <input
+            {/* <input
               type='text'
               className='form-control'
               value={this.state.business_phone}
               onChange={this.onChangeBusinessPhone}
+            /> */}
+            <PhoneInput
+              placeholder='Enter phone number'
+              value={this.state.phone}
+              onChange={phone => this.setState({ phone })}
             />
           </div>
           <div className='form-group'>
