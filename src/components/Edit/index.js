@@ -71,7 +71,7 @@ export default class Edit extends Component {
       .then(res => console.log(res.data));
 
     this.props.history.push('/');
-    // this.props.history.push('/');
+
     window.location.reload();
   };
 

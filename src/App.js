@@ -27,7 +27,7 @@ class App extends Component {
             <h2>Welcome to Office Space As A Service</h2>{' '}
             <Link to='/create'>
               <Button variant='contained' style={{ margin: 20 }}>
-                Add New Listing
+                Add Listing
               </Button>
             </Link>
             <br />

@@ -12,12 +12,12 @@ export default class HeaderNav extends Component {
           <ul className='navbar-nav mr-auto'>
             <li className='nav-item'>
               <Link to={'/'} className='nav-link'>
-                Home
+                Current Listings
               </Link>
             </li>
             <li className='nav-item'>
               <Link to={'/create'} className='nav-link'>
-                Create Listing
+                Add Listing
               </Link>
             </li>
             {/* <li className='nav-item'>

@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
 
 export default class Create extends Component {
   // constructor(props) {
@@ -104,13 +103,7 @@ export default class Create extends Component {
             />
           </div>
           <div className='form-group'>
-            {/* <Link to='/'> */}
-            <input
-              type='submit'
-              value='Register Business'
-              className='btn btn-primary'
-            />
-            {/* </Link> */}
+            <input type='submit' value='Submit' className='btn btn-primary' />
           </div>
         </form>
       </div>
