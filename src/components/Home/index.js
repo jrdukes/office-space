@@ -3,10 +3,8 @@ import axios from 'axios';
 import TableRow from './TableRow';
 
 export default class Home extends Component {
-  // constructor(props) {
-  //   super(props);
   state = { business: [] };
-  // }
+
   componentDidMount() {
     axios
       .get('http://localhost:4000/business')
@@ -16,19 +14,14 @@ export default class Home extends Component {
       .catch(function(error) {
         console.log(error);
       });
-    // console.log(this.props);
   }
   tabRow = history => {
     return this.state.business.map(function(object, i) {
       return <TableRow obj={object} key={i} history={history} />;
     });
-
-    // console.log();
   };
 
   render() {
-    // const { history } = this.props;
-    
     return (
       <div>
         <h3 align='center'>Property List</h3>

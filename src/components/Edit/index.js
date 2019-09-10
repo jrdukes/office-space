@@ -2,21 +2,12 @@ import React, { Component } from 'react';
 import axios from 'axios';
 
 export default class Edit extends Component {
-  //   constructor(props) {
-  // super(props);
-  // this.onChangeBusinessName = this.onChangeBusinessName.bind(this);
-  // this.onChangePropertyAddress = this.onChangePropertyAddress.bind(this);
-  // this.onChangeBusinessEmail = this.onChangeBusinessEmail.bind(this);
-  // this.onChangeBusinessPhone = this.onChangeBusinessPhone.bind(this);
-  // this.onSubmit = this.onSubmit.bind(this);
-
   state = {
     business_name: '',
     property_address: '',
     business_email: '',
     business_phone: ''
   };
-  //   }
 
   componentDidMount() {
     axios

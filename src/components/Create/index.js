@@ -1,25 +1,19 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import InputMask from 'react-input-mask';
-import 'react-phone-number-input/style.css';
+// import InputMask from 'react-input-mask';
+// import 'react-phone-number-input/style.css';
 import PhoneInput from 'react-phone-number-input';
+// import ReactPhoneInput from 'react-phone-input-2';
+import 'react-phone-input-2/dist/style.css';
 
 export default class Create extends Component {
-  // constructor(props) {
-  // super(props);
-  // this.onChangeBusinessName = this.onChangeBusinessName.bind(this);
-  // this.onChangePropertyAddress = this.onChangePropertyAddress.bind(this);
-  // this.onChangeBusinessEmail = this.onChangeBusinessEmail.bind(this);
-  // this.onChangeBusinessPhone = this.onChangeBusinessPhone.bind(this);
-  // this.onSubmit = this.onSubmit.bind(this);
-
   state = {
     business_name: '',
     property_address: '',
     business_email: '',
     business_phone: ''
   };
-  // }
+
   onChangeBusinessName = e => {
     this.setState({
       business_name: e.target.value
@@ -64,12 +58,6 @@ export default class Create extends Component {
     window.location.reload();
   };
 
-  // class PhoneInput extends Component {
-  //   render() {
-  //     return <InputMask {...this.props} mask="+4\9 99 999 99" maskChar=" " />;
-  //   }
-  // }
-
   render() {
     return (
       <div style={{ marginTop: 10 }}>
@@ -103,19 +91,32 @@ export default class Create extends Component {
             />
           </div>
           <div className='form-group'>
-            <label>Business Phone: </label>
-            {/* <input
+            <label>Business Phone:</label>
+
+            {/* <ReactPhoneInput
+              inputExtraProps={{
+                name: 'phone',
+                required: true,
+                autoFocus: true
+              }}
+              defaultCountry={'us'}
+              value={this.state.phone}
+              onChange={this.handleOnChange}
+            /> */}
+
+            <input
               type='text'
               className='form-control'
               value={this.state.business_phone}
               onChange={this.onChangeBusinessPhone}
-            /> */}
-            <PhoneInput
-              placeholder='Enter phone number'
-              value={this.state.phone}
-              onChange={phone => this.setState({ phone })}
             />
           </div>
+          {/* <PhoneInput
+            placeholder='Enter phone number'
+            value={this.state.phone}
+            onChange={phone => this.setState({ phone })}
+          /> */}
+
           <div className='form-group'>
             <input type='submit' value='Submit' className='btn btn-primary' />
           </div>
