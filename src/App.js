@@ -1,10 +1,6 @@
 import React, { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { 
-  // BrowserRouter as Router,
-   Switch, 
-   Route,
-   Link } from 'react-router-dom';
+import { Switch, Route, Link } from 'react-router-dom';
 
 import Create from './components/Create';
 import Edit from './components/Edit';
@@ -15,20 +11,11 @@ import { Button } from '@material-ui/core';
 class App extends Component {
   render() {
     return (
-      <div
-        style={
-          {
-            // backgroundColor: 'lightgrey',
-            // height: '100vh',
-            // padding: '20px'
-          }
-        }
-      >
-        {/* <Router> */}
+      <div>
         <div className='container'>
           <HeaderNav />
           <br />
-          <h2>Welcome to Office Space As A Service</h2>{' '}
+          <h2>Welcome to Office Space as a Service(OSaaS)</h2>{' '}
           <Link to='/create'>
             <Button variant='contained' style={{ margin: 20 }}>
               Add Listing
@@ -41,7 +28,6 @@ class App extends Component {
             <Route path='/' component={Home} />
           </Switch>
         </div>
-        {/* </Router> */}
       </div>
     );
   }
